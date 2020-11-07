@@ -12,7 +12,7 @@ app.use(express.static("client/build"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/my-mern", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/google-books", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
