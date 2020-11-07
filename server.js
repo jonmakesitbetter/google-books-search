@@ -3,11 +3,13 @@ const { default: Axios } = require("axios");
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const router = require("./controllers/controller");
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+app.use(router);
 app.use(express.static("client/build"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
