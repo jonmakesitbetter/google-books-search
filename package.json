@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "proxy": "http://localhost:3001",
   "scripts": {
+    "client": "cd client && npm run start",
+    "start-dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -19,10 +22,14 @@
   },
   "homepage": "https://github.com/jonmakesitbetter/google-books-search#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.10.13",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
   }
 }
