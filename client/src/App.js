@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import Search from "./components/Search";
 
 function App() {
   useEffect(() => {
@@ -16,7 +17,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-        <h1>Hello world!</h1>
+        <Search/>
     </div>
   );
 }
