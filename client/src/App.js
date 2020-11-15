@@ -2,10 +2,11 @@ import { useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import Search from "./components/Search";
+import Saved from "./components/Saved";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   useEffect(() => {
-    console.log("Make an API call");
     axios
       .get("/api/config")
       .then((response) => {
@@ -17,7 +18,13 @@ function App() {
   }, []);
   return (
     <div className="App">
-        <Search/>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/Search" component={Search} />
+          <Route path="/Saved" component={Saved} />
+        </Switch>
+      </Router>
     </div>
   );
 }

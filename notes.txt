@@ -1,0 +1,37 @@
+link={book.saleInfo.byLink}
+9:33
+const handleSave = (e) => {    // console.log(e.target.find("p"));
+    axios.post("/api/books", state).then((res) => {      console.log(res);    });  };
+
+    router.post("/api/books", (req, res) => {  const newBook = {    title: req.body.title,    authors: req.body.authors,    description: req.body.description,    image: req.body.image,    link: req.body.link,  };  db.Books.create(newBook).then((newby) => {    res.json(newby);  });});
+
+    const [book, setBook] = useState({
+    title: props.title,
+    authors: props.authors,
+    description: props.description,
+    image: props.image,
+    link: props.link,
+  });
+
+
+
+
+
+11:06
+const viewBook = () => {
+    let path = book.link;
+    window.open(path);
+  }
+
+  <button type="submit" className="btn btn-secondary" onClick={viewBook}>View Book</button>
+
+  didn't know exactly how to link notes to user, and we started using json web tokens
+
+
+
+
+
+7:25
+you are gonna need ".env" and write "SECRET=secret" in it
+7:27
+gitignore hide that file so everyone needs one on their local machine

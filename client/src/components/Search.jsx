@@ -1,30 +1,31 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-class Search extends Component {
-  state = {
-    books: [],
-    query: "",
+function Search() {
+  const [books, updateBooks] = useState([]);
+  const [query, updateQuery] = useState("Jaws");
+
+  searchBooks = () => {
+    axios
+      .get(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
+      .then((result) => {
+        updateBooks(result.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  componentDidMount() {
-     
-    this.setState.books booksArray = axios.get(`https://www.googleapis.com/books/v1/volumes?q=Jaws`)
-      .then((result) => {
-        this.setState({
-            books: result.data,
-        })
-        }).catch((error) => {
-          console.log(error);
-        });
-        console.log(booksArray);
-      };
-  
-  render() {
-      <div>
-    <h1>Search</h1>
+
+
+  return (
+    <div>
+      <h1>Search</h1>
+      {books.map(book => (
+        <li>{book.title}</li>
+      ))}
     </div>
-  }
+  );
 }
 
 export default Search;
