@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../App.css";
 import Bookinfo from "./Bookinfo";
 
 class Search extends Component {
@@ -26,8 +25,8 @@ class Search extends Component {
         .then((result) => {
           this.setState({
             books: result.data.items,
-          });
-        });
+          })
+        })
       console.log(this.state.books);
     } else {
       this.componentDidMount();
@@ -45,7 +44,7 @@ class Search extends Component {
         title: book.title,
         author: book.author,
         description: book.description,
-        image: book.image,
+        image: book.imageLinks.thumbnail,
         link: book.link,
       })
       .then((result) => {
@@ -61,10 +60,10 @@ class Search extends Component {
       <div className="container">
         <form>
           <div className="form-group">
-            <label for="exampleInputEmail1">Search Books</label>
+            <label>Search Books</label>
             <input
               type="text"
-              claclassNamess="form-control"
+              className="form-control"
               value={this.state.query}
               onChange={this.handleInputChange}
             />

@@ -13,7 +13,9 @@ const Saved = () => {
     const loadBooks = ()=>{
         Axios.get("/api/books").then((result)=>{
             setBooks(result.data);
-        });
+        }).catch((err)=>{
+            console.log(err)
+        })
     };
 
     return (

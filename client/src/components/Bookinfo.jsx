@@ -4,7 +4,7 @@ import Axios from "axios";
 const Bookinfo = (props) => {
 
     const showBook = ()=>{
-        let path = props.ink;
+        let path = props.link;
         window.open(path);
     };
 
@@ -12,6 +12,7 @@ const Bookinfo = (props) => {
         const id = e.target.getAttribute(id);
 
         Axios.delete(`/api/books/${id}`).then((result)=>{
+            console.log(result)
             props.loadBooks();
         })
     }
@@ -24,7 +25,7 @@ const Bookinfo = (props) => {
                <p>{props.description}</p>
                <button className="btn btn-primary" onClick={showBook}>Book!</button>
                {props.onSearch ? (
-                   <button className="btn btn-primary" onClick={()=>props.saveBook(props.id)}>Save</button>
+                   <button className="btn btn-primary" onClick={()=>props.saveToLibrary(props.id)}>Save</button>
                ) : (
                    <button className="btn btn-danger" onClick={deleteBook}>Delete</button>
                )

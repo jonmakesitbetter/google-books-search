@@ -22,7 +22,7 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/Search" component={Search} />
+          <Route path="/" component={Search} />
           <Route path="/Saved" component={Saved} />
         </Switch>
       </Router>
