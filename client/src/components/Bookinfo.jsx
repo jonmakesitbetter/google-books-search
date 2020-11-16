@@ -21,11 +21,11 @@ const Bookinfo = (props) => {
            <li id={props.id}>
                <h2>{props.title}</h2>
                <img src={props.thumbnail} alt={props.title}/>
-               <h2>Author: {props.authors}</h2>
+               <h4>Author: {props.authors}</h4>
                <p>{props.description}</p>
-               <button className="btn btn-primary" onClick={showBook}>Book!</button>
+               <button className="btn btn-primary" onClick={showBook}>See more about this book!</button>
                {props.onSearch ? (
-                   <button className="btn btn-primary" onClick={()=>props.saveToLibrary(props.id)}>Save</button>
+                   <button className="btn btn-primary" onClick={()=>props.saveToLibrary(props.id)}>Save to your library</button>
                ) : (
                    <button className="btn btn-danger" onClick={deleteBook}>Delete</button>
                )

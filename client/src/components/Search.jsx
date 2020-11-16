@@ -35,6 +35,7 @@ class Search extends Component {
 
   saveToLibrary = (bookId) => {
     const savedBook = this.state.books.filter((book) => {
+      console.log(book);
       return book.id === bookId;
     });
     const book = savedBook[0].volumeInfo;
@@ -80,8 +81,8 @@ class Search extends Component {
             title={book.title}
             onSearch={this.state.onSearch}
             saveToLibrary={this.saveToLibrary}
-            authors={book.authors}
-            description={book.description}
+            authors={book.volumeInfo.authors}
+            description={book.volumeInfo.description}
             thumbnail={book.volumeInfo.imageLinks.thumbnail}
             link={book.volumeInfo.infoLink}
             />
