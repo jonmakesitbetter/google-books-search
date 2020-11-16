@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 import Search from "./components/Search";
 import Saved from "./components/Saved";
+import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
