@@ -1,6 +1,6 @@
-const router = express.router;
 const express = require("express");
-const db = require("../src/components/Models");
+const router = express.Router();
+const db = require("../Models");
 
 router.get("/api/books", (req, res)=>{
     db.Books.find({}).then((allBooks)=>{

@@ -26,11 +26,9 @@ const Saved = () => {
                     key={book.id}
                     id={book.id}
                     title={book.title}
-                    onSearch={this.state.onSearch}
-                    saveToLibrary={this.saveToLibrary}
                     authors={book.authors}
                     description={book.description}
-                    thumbnail={book.imageLinks.thumbnail}
+                    thumbnail={book.image}
                     link={book.infoLink}
                     />
                 ))}

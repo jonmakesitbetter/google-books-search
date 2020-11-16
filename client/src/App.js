@@ -22,8 +22,8 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/" component={Search} />
           <Route path="/Saved" component={Saved} />
+          <Route path="/" component={Search} />
         </Switch>
       </Router>
     </div>

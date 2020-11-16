@@ -78,7 +78,7 @@ class Search extends Component {
             <Bookinfo
             key={book.id}
             id={book.id}
-            title={book.title}
+            title={book.volumeInfo.title}
             onSearch={this.state.onSearch}
             saveToLibrary={this.saveToLibrary}
             authors={book.volumeInfo.authors}
