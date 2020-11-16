@@ -33,6 +33,21 @@ class Search extends Component {
     }
   };
 
+  saveToLibrary = (bookId) =>{
+    const savedBook = this.state.books.filter(book => {
+      return book.id === bookId
+    });
+    const book = savedBook[0].volumeInfo;
+
+    axios.post("/api/books", {
+      title: book.title,
+      author: book.author,
+      description: book.description,
+      image: book.image,
+      link: book.link
+    })
+  }
+
   render() {
     return (
         <div>
