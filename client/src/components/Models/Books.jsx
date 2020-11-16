@@ -7,7 +7,7 @@ const BookSchema = new Schema({
         trim: true,
         required: "Please enter a title."
     },
-    author:{
+    authors:{
         type: Array,
         trim: true
     },
