@@ -8,7 +8,7 @@ const Navbar = () => {
           <ul className="navbar-nav">
             <li className="nav-item active">
               <Link className="nav-link" to="/">
-                Home
+                Search
               </Link>
             </li>
             <li className="nav-item">
@@ -16,7 +16,7 @@ const Navbar = () => {
                 className="nav-link"
                 to="/Saved"
               >
-                Journal Entry
+                Saved
               </Link>
             </li>
           </ul>

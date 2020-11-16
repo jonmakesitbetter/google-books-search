@@ -1,52 +1,46 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import axios from "axios";
+import "../App.css";
 
-function Search() {
-  const [books, updateBooks] = useState([]);
-  const [query, updateQuery] = useState("Jaws");
+class Search extends Component {
+    state = {
+        books: [],
+        query: "",
+        onSearch: true,
+    };
 
-  searchBooks = () => {
+    handleInputChange = (e)=> {
+      const title = e.target.value;
+      this.setState({query: title})
+    }
+
+    handleSubmit = (e)=>{
+      if(e){
+        e.preventDefault();
+      };
+      if(this.state.query) {
+      let searchBooks = this.state.query;
     axios
       .get(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
       .then((result) => {
-        updateBooks(result.data);
-      })
-      .catch((error) => {
-        console.log(error);
+        this.setState({
+          books: result.data.items
       });
+    });
+    console.log(this.state.books);
+    } else {
+      this.componentDidMount();
+    }
   };
 
-  const handleInputChange = (e) => {
-  e.persist();
-  updateQuery({...query, [name]: value})
-};
-
-// const useSignUpForm = (callback) => {
-//   const [inputs, setInputs] = useState({});
-//   const handleSubmit = (event) => {
-//     if (event) {
-//       event.preventDefault();
-//     }
-//   }
-//   const handleInputChange = (event) => {
-//     event.persist();
-//     setInputs(inputs => ({...inputs, [event.target.name]: event.target.value}));
-//   }
-//   return {
-//     handleSubmit,
-//     handleInputChange,
-//     inputs
-//   };
-// }
-
-  return (
-    <div>
-      <h1>Search</h1>
-      {books.map(book => (
-        <li>{book.title}</li>
-      ))}
-    </div>
-  );
+  render() {
+    return (
+        <div>
+            
+        </div>
+    );
 }
+  
+  }
 
 export default Search;
