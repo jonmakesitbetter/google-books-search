@@ -21,7 +21,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/google-books", 
   useFindAndModify: false,
 });
 
-
 const connection = mongoose.connection;
 
 connection.on("connected", () => {

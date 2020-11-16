@@ -30,8 +30,8 @@ const Saved = () => {
                     saveToLibrary={this.saveToLibrary}
                     authors={book.authors}
                     description={book.description}
-                    thumbnail={book.volumeInfo.imageLinks.thumbnail}
-                    link={book.volumeInfo.infoLink}
+                    thumbnail={book.imageLinks.thumbnail}
+                    link={book.infoLink}
                     />
                 ))}
             </ul>

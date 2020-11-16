@@ -9,7 +9,7 @@ const Bookinfo = (props) => {
     };
 
     const deleteBook = (e)=>{
-        const id = e.target.getAttribute(id);
+        const id = e.target.getAttribute("id");
 
         Axios.delete(`/api/books/${id}`).then((result)=>{
             console.log(result)

@@ -10,8 +10,8 @@ class Search extends Component {
   };
 
   handleInputChange = (e) => {
-    const title = e.target.value;
-    this.setState({ query: title });
+    const bookTitle = e.target.value;
+    this.setState({ query: bookTitle });
   };
 
   handleSubmit = (e) => {
